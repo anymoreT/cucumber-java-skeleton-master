@@ -6,3 +6,5 @@ mvn clean test
 @CucumberOptions(plugin = {"json:target/cucumber/cucumber.json", "html:target/cucumber", "pretty"}, features = "src/test/resources/skeleton/")
 public class RunCukesTest extends AbstractTestNGCucumberTests {
 }
+
+3. 通过tags来加标签
