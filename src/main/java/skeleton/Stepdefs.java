@@ -18,7 +18,12 @@ public class Stepdefs {
 
     @Then("^my belly should grow$")
     public void My_have_cukes_in_my_belly() {
-       System.out.print("++++++++++++run cucumber");
+       System.out.print("\n++++++++++++run cucumber");
+    }
+
+    @Then("^打开浏览器$")
+    public void oepen_brower() {
+        System.out.print("\n++++++++++++打开浏览器");
     }
 
 
