@@ -10,35 +10,45 @@ import java.lang.AssertionError;
 
 
 public class Element {
-	 public WebDriver driver;
-	 public String by_way = null;
+	 public WebDriver driver = null;
+	 public String byWay = null;
 	 public String locator = null;
 	 public  WebElement element = null;
+
+//	 public void setDriver(WebDriver driver)
+//	 {
+//		 this.driver = driver;
+//	 }
+//
+//	public WebDriver getDriver( )
+//	{
+//		return this.driver;
+//	}
 	 
 	 /*
 	  * 使用时，需要在调用的时候，传入特定的参数
 	  */
-	 public Element(String common_locator_str, String special_locator){
-		 this.driver = Driver.get_driver();
+	 public Element(WebDriver driver, String common_locator_str, String special_locator){
+		 this.driver = driver;
 		 String[] locator = common_locator_str.split(";");
-		 this.by_way = locator[0];
+		 this.byWay = locator[0];
 		 this.locator = String.format(locator[1], special_locator);
 	 }
 	 
 	 /*
 	  * 使用时，需要在调用的时候，传入特定的参数
 	  */
-	 public Element(String locator_str){
-		 this.driver = Driver.get_driver();
+	 public Element(WebDriver driver, String locator_str){
+		 this.driver = driver;
 		 String[] locator = locator_str.split(";");
-		 this.by_way = locator[0];
+		 this.byWay = locator[0];
 		 this.locator = locator[1];
 	 }
 	 
 
 	public WebElement get_element(){
 		try{
-			switch (this.by_way) {
+			switch (this.byWay) {
 				case "name":
 					this.element = this.driver.findElement(By.name(this.locator));
 					break;
