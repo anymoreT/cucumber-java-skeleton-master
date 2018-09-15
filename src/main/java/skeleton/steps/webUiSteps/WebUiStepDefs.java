@@ -1,4 +1,4 @@
-package skeleton.steps;
+package skeleton.steps.webUiSteps;
 
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.WebDriver;

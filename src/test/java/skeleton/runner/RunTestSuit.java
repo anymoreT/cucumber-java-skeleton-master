@@ -1,4 +1,4 @@
-package skeleton;
+package skeleton.runner;
 
 
 import cucumber.api.CucumberOptions;
@@ -6,9 +6,12 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
+
+
 @CucumberOptions(
         plugin = {"json:target/cucumber/cucumber.json", "html:target/cucumber", "pretty"},
         features = "src/test/resources/skeleton/features/webFeature",
+        glue="skeleton.steps",
         tags = { "@TestngScenario" }
           )
 public class RunTestSuit extends AbstractTestNGCucumberTests {

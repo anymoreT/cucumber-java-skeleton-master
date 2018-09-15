@@ -20,6 +20,14 @@ http://npm.taobao.org/mirrors/chromedriver/2.21/
  D:\huangyong\tools\chromeDriver\2.41\chromedriver_win32\chromedriver.exe
 
 
-5. ided plugin
+5. idea plugin
 http://plugins.jetbrains.com/plugin/9164-gherkin
 http://plugins.jetbrains.com/plugin/7212-cucumber-for-java
+
+6. 出现提示step没有被定义，确保在CucumberOptions里面的glue设置了正确的路径
+@CucumberOptions(
+        plugin = {"json:target/cucumber/cucumber.json", "html:target/cucumber", "pretty"},
+        features = "src/test/resources/skeleton/features/webFeature",
+        glue="skeleton.steps",
+        tags = { "@TestngScenario" }
+          )
