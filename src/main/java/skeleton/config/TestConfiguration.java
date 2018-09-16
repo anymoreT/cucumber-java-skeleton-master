@@ -9,7 +9,7 @@ import skeleton.utils.DataRepo;
 @Configuration
 @ComponentScan(basePackages = {"skeleton", "skeleton.steps"})
 public class TestConfiguration {
-    @Bean
+    @Bean(name="DataRepoBean")
     public DataRepo dataRepo()  {
         DataRepo dataRepo = new DataRepo();
         return dataRepo;

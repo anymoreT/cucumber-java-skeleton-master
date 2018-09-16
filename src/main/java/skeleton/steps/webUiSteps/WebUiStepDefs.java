@@ -21,7 +21,7 @@ public class WebUiStepDefs {
     public void open_browser() {
         System.out.print("\n+++++++++:" + dataRepo.dataType());
         System.out.print("\n++++++++++++打开谷歌浏览器");
-
+        dataRepo.setVersion(888);
         browserDriver.setDriver(driver);
         browserDriver.goToUrl("https://www.baidu.com");
         Element el = new Element(driver, "xpath;//input[@id='su']");
@@ -37,7 +37,8 @@ public class WebUiStepDefs {
 
     @Then("^打开网址:(.+)$")
     public void got_to_url(String url) {
-        browserDriver.goToUrl(url);
+    //    browserDriver.goToUrl(url);
+        System.out.print("在另外一个case,version:" + dataRepo.getVersion());
 
     }
 

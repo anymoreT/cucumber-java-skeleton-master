@@ -31,3 +31,6 @@ http://plugins.jetbrains.com/plugin/7212-cucumber-for-java
         glue="skeleton.steps",
         tags = { "@TestngScenario" }
           )
+
+7.依赖注入的时候，主要在在一个stepDefs上加入
+@ContextConfiguration(classes = {TestConfiguration.class})
