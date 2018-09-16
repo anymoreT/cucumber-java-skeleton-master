@@ -14,6 +14,7 @@
         <cucumber.version>3.0.0</cucumber.version>
         <cucumber.pro.version>2.0.4</cucumber.pro.version>
         <maven.compiler.version>3.3</maven.compiler.version>
+        <spring.version>5.0.1.RELEASE</spring.version>
         <!--<restassured.version>2.9.0</restassured.version>-->
     </properties>
 
@@ -22,39 +23,47 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>${cucumber.version}</version>
-            <!--<scope>test</scope>-->
         </dependency>
 
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>${cucumber.version}</version>
-            <!--<scope>test</scope>-->
         </dependency>
 
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>pro-plugin</artifactId>
             <version>${cucumber.pro.version}</version>
-            <!--<scope>test</scope>-->
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
             <version>${cucumber.version}</version>
-            <!--<scope>test</scope>-->
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.14.0</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.seleniumhq.selenium</groupId>-->
-            <!--<artifactId>selenium-server</artifactId>-->
-            <!--<version>3.1.0</version>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>com.github.fge</groupId>
             <artifactId>json-schema-validator</artifactId>
@@ -78,12 +87,6 @@
             <artifactId>commons-dbutils</artifactId>
             <version>1.7</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>io.cucumber</groupId>-->
-            <!--<artifactId>cucumber-spring</artifactId>-->
-            <!--<version>${cucumber.version}</version>-->
-        <!--</dependency>-->
-
     </dependencies>
 
     <build>
@@ -102,7 +105,7 @@
             <!--<plugin>-->
                 <!--<groupId>com.github.temyers</groupId>-->
                 <!--<artifactId>cucumber-jvm-parallel-plugin</artifactId>-->
-                <!--<version>4.2.0</version>-->
+                <!--<version>5.0.0</version>-->
                 <!--<executions>-->
                     <!--<execution>-->
                         <!--<id>generateRunners</id>-->
@@ -111,11 +114,16 @@
                             <!--<goal>generateRunners</goal>-->
                         <!--</goals>-->
                         <!--<configuration>-->
-                            <!--&lt;!&ndash; Mandatory &ndash;&gt;&lt;!&ndash; List of package names to scan for glue code. &ndash;&gt; <glue>-->
-                            <!--<package>com.example</package>-->
-                            <!--<package>com.example.other</package>-->
-                        <!--</glue>-->
+                            <!--&lt;!&ndash; Mandatory &ndash;&gt;-->
+                            <!--&lt;!&ndash; List of package names to scan for glue code. &ndash;&gt;-->
+                            <!--<glue>-->
+                                <!--<package>skeleton.runner</package>-->
+                                <!--<package>skeleton</package>-->
+                            <!--</glue>-->
+                            <!--<useTestNG>true</useTestNG>-->
+                            <!--<featuresDirectory>src/test/resources/skeleton/features/</featuresDirectory>-->
                         <!--</configuration>-->
+
                     <!--</execution>-->
                 <!--</executions>-->
             <!--</plugin>-->
