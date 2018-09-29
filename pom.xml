@@ -15,6 +15,8 @@
         <cucumber.pro.version>2.0.4</cucumber.pro.version>
         <maven.compiler.version>3.3</maven.compiler.version>
         <spring.version>5.0.1.RELEASE</spring.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <!--<restassured.version>2.9.0</restassured.version>-->
     </properties>
 
@@ -54,11 +56,19 @@
             <version>${spring.version}</version>
         </dependency>
 
+        <!--<dependency>-->
+            <!--<groupId>io.cucumber</groupId>-->
+            <!--<artifactId>cucumber-testng</artifactId>-->
+            <!--<version>${cucumber.version}</version>-->
+        <!--</dependency>-->
+
+
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-testng</artifactId>
+            <artifactId>cucumber-junit</artifactId>
             <version>${cucumber.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -99,34 +109,27 @@
                     <encoding>UTF-8</encoding>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
-                    <compilerArgument>-Werror</compilerArgument>
+                    <source>1.8</source>
+
                 </configuration>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>com.github.temyers</groupId>-->
-                <!--<artifactId>cucumber-jvm-parallel-plugin</artifactId>-->
-                <!--<version>5.0.0</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>generateRunners</id>-->
-                        <!--<phase>generate-test-sources</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>generateRunners</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--&lt;!&ndash; Mandatory &ndash;&gt;-->
-                            <!--&lt;!&ndash; List of package names to scan for glue code. &ndash;&gt;-->
-                            <!--<glue>-->
-                                <!--<package>skeleton.runner</package>-->
-                                <!--<package>skeleton</package>-->
-                            <!--</glue>-->
-                            <!--<useTestNG>true</useTestNG>-->
-                            <!--<featuresDirectory>src/test/resources/skeleton/features/</featuresDirectory>-->
-                        <!--</configuration>-->
 
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
+
+
+            <!-- Source directory configuration -->
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.18.1</version>
+                    <!--<configuration>-->
+                        <!--&lt;!&ndash; Suite testng xml file to consider for test execution &ndash;&gt;-->
+                        <!--<suiteXmlFiles>-->
+                            <!--<suiteXmlFile>testng.xml</suiteXmlFile>-->
+                        <!--</suiteXmlFiles>-->
+                    <!--</configuration>-->
+                </plugin>
+
         </plugins>
     </build>
 </project>
