@@ -16,7 +16,7 @@ import org.testng.annotations.DataProvider;
 
         glue="skeleton.steps"
           )
-public class RunTestFeatureSuit extends AbstractTestNGCucumberTests {
+public class RunTestFeatureSuitTest extends AbstractTestNGCucumberTests {
         @BeforeSuite(alwaysRun = true)
         public void setUp() throws Exception {
             System.out.print("\n====执行case前跑");

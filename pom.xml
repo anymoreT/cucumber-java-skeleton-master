@@ -15,6 +15,8 @@
         <cucumber.pro.version>2.0.4</cucumber.pro.version>
         <maven.compiler.version>3.3</maven.compiler.version>
         <spring.version>5.0.1.RELEASE</spring.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <!--<restassured.version>2.9.0</restassured.version>-->
     </properties>
 
