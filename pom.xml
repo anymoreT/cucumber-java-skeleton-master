@@ -16,16 +16,13 @@
         <maven.compiler.version>3.3</maven.compiler.version>
         <spring.version>5.0.1.RELEASE</spring.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <env1>UAT-DDDDDDDD</env1>
-
-
-        <!--通过指定profile，将环境参数传递给程序，使用 mvn -PQA激活profile-->
     </properties>
+    <!--通过指定profile，将环境参数传递给程序，使用 mvn -PQA激活profile-->
     <profiles>
         <profile>
             <id>UAT-A</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <automation.environment>UAT-A</automation.environment>
@@ -33,18 +30,27 @@
         </profile>
         <profile>
             <id>UAT-B</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <automation.environment>UAT-B</automation.environment>
             </properties>
         </profile>
         <profile>
             <id>DEMO</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
             <properties>
                 <automation.environment>DEMO</automation.environment>
             </properties>
         </profile>
         <profile>
             <id>DEV</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
             <properties>
                 <automation.environment>DEV</automation.environment>
             </properties>
