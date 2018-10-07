@@ -16,9 +16,40 @@
         <maven.compiler.version>3.3</maven.compiler.version>
         <spring.version>5.0.1.RELEASE</spring.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <env1>UAT-DDDDDDDD</env1>
 
-        <!--<restassured.version>2.9.0</restassured.version>-->
+
+        <!--通过指定profile，将环境参数传递给程序，使用 mvn -PQA激活profile-->
     </properties>
+    <profiles>
+        <profile>
+            <id>UAT-A</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <automation.environment>UAT-A</automation.environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>UAT-B</id>
+            <properties>
+                <automation.environment>UAT-B</automation.environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>DEMO</id>
+            <properties>
+                <automation.environment>DEMO</automation.environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>DEV</id>
+            <properties>
+                <automation.environment>DEV</automation.environment>
+            </properties>
+        </profile>
+    </profiles>
 
     <dependencies>
         <dependency>
@@ -104,31 +135,20 @@
                     <compilerArgument>-Werror</compilerArgument>
                 </configuration>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>com.github.temyers</groupId>-->
-                <!--<artifactId>cucumber-jvm-parallel-plugin</artifactId>-->
-                <!--<version>5.0.0</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>generateRunners</id>-->
-                        <!--<phase>generate-test-sources</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>generateRunners</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--&lt;!&ndash; Mandatory &ndash;&gt;-->
-                            <!--&lt;!&ndash; List of package names to scan for glue code. &ndash;&gt;-->
-                            <!--<glue>-->
-                                <!--<package>skeleton.runner</package>-->
-                                <!--<package>skeleton</package>-->
-                            <!--</glue>-->
-                            <!--<useTestNG>true</useTestNG>-->
-                            <!--<featuresDirectory>src/test/resources/skeleton/features/</featuresDirectory>-->
-                        <!--</configuration>-->
+            <!--//设置环境变量，传递给程序-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.16</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        这里指定全局变量，通过system.getProperties()获取。
+                        <environment>${automation.environment}</environment>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
 
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
+
         </plugins>
     </build>
 </project>

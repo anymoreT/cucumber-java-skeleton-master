@@ -19,12 +19,12 @@ import org.testng.annotations.DataProvider;
 public class RunTestFeatureSuitTest extends AbstractTestNGCucumberTests {
         @BeforeSuite(alwaysRun = true)
         public void setUp() throws Exception {
-            System.out.print("\n====执行case前跑");
+            System.out.print("\n==+++++++++==执行case前跑");
         }
 
         @AfterSuite(alwaysRun = true)
         public void quit() {
-            System.out.print("\n====执行case后跑");
+            System.out.print("\n==--------------==执行case后跑");
         }
 
 //    @DataProvider(parallel = false)

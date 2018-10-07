@@ -6,6 +6,9 @@ import cucumber.api.CucumberOptions;
 //import org.testng.annotations.BeforeSuite;
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+
 /*
 通过tag指定跑的脚本
  */
@@ -16,16 +19,16 @@ import org.junit.runner.RunWith;
         glue="skeleton.steps",
         tags = { "@TestngScenario" }
           )
-public class RunTestTagsSuit  {
-//        @BeforeSuite(alwaysRun = true)
-//        public void setUp() throws Exception {
-//            System.out.print("\n====执行case前跑");
-//        }
-//
-//        @AfterSuite(alwaysRun = true)
-//        public void quit() {
-//            System.out.print("\n====执行case后跑");
-//        }
+public class RunTestTagsSuitTest {
+        @BeforeSuite(alwaysRun = true)
+        public void setUp() throws Exception {
+            System.out.print("\n====wwwwwwwwwwww执行suit前跑");
+        }
+
+        @AfterSuite(alwaysRun = true)
+        public void quit() {
+            System.out.print("\n====wwwwwwwwwwww执行suit后跑");
+        }
 
     }
 

@@ -12,6 +12,8 @@ public class TestConfiguration {
     @Bean(name="DataRepoBean")
     public DataRepo dataRepo()  {
         DataRepo dataRepo = new DataRepo();
+        String environment = System.getProperty("environment");
+        System.out.print("========当前环境=========environment:" + environment);
         return dataRepo;
     }
 }
