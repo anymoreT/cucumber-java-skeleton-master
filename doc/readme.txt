@@ -89,6 +89,8 @@ Feature path examples:
   @<path>/<file>                         Parse <path>/<file> for feature paths generated
                                          by the rerun formatter.
 
+9. 获取帮助
+mvn test -Dcucumber.options="--help"
 
 
 
