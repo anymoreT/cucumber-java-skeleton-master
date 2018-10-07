@@ -92,6 +92,9 @@ Feature path examples:
 9. 获取帮助
 mvn test -Dcucumber.options="--help"
 
+10. 指定生成json文件，并放到指定位置
+mvn test -Dcucumber.options="-g  skeleton.steps  --tags @id1 -p json:target/dev.json"  -PDEV
+
 
 
 
