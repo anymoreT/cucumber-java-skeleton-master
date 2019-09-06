@@ -1,7 +1,8 @@
 package skeleton.runner;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.testng.AbstractTestNGCucumberTests;
+
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
@@ -13,7 +14,7 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         plugin = {"json:target/cucumber/cucumber.json", "html:target/cucumber", "pretty"},
         features = "src/test/resources/skeleton/features/webFeature",
-
+        tags = { "@smoke" },
         glue="skeleton.steps"
           )
 public class RunTestFeatureSuitTest extends AbstractTestNGCucumberTests {
@@ -27,11 +28,11 @@ public class RunTestFeatureSuitTest extends AbstractTestNGCucumberTests {
             System.out.print("\n==--------------==执行case后跑");
         }
 
-//    @DataProvider(parallel = false)
-//    @Override
-//    public Object[][] scenarios() {
-//        return super.scenarios();
-//    }
+    @DataProvider(parallel = true)
+    @Override
+    public Object[][] scenarios() {
+        return super.scenarios();
+    }
 
     }
 

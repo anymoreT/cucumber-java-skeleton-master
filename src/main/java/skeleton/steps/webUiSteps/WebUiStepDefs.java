@@ -1,6 +1,6 @@
 package skeleton.steps.webUiSteps;
 
-import cucumber.api.java.en.Then;
+import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import skeleton.com.seleniumFunction.BrowserDriver;
@@ -35,12 +35,6 @@ public class WebUiStepDefs {
         browserDriver.quitDriver();
     }
 
-    @Then("^打开网址:(.+)$")
-    public void got_to_url(String url) {
-    //    browserDriver.goToUrl(url);
-        System.out.print("在另外一个case,version:" + dataRepo.getVersion());
-
-    }
 
 
 }

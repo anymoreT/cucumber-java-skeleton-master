@@ -11,8 +11,8 @@
     <properties>
         <java.version>1.8</java.version>
         <junit.version>4.12</junit.version>
-        <cucumber.version>3.0.0</cucumber.version>
-        <cucumber.pro.version>2.0.4</cucumber.pro.version>
+        <cucumber.version>4.7.2</cucumber.version>
+<!--        <cucumber.pro.version>2.0.4</cucumber.pro.version>-->
         <maven.compiler.version>3.3</maven.compiler.version>
         <spring.version>5.0.1.RELEASE</spring.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -68,12 +68,6 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>${cucumber.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>pro-plugin</artifactId>
-            <version>${cucumber.pro.version}</version>
         </dependency>
 
         <dependency>
@@ -150,15 +144,20 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.16</version>
+                <version>2.22.0</version>
                 <configuration>
                     <systemPropertyVariables>
                         这里指定全局变量，通过system.getProperties()获取。
                         <environment>${automation.environment}</environment>
                     </systemPropertyVariables>
+                    <properties>
+                        <property>
+                            <name>dataproviderthreadcount</name>
+                            <value>${num}</value>
+                        </property>
+                    </properties>
                 </configuration>
             </plugin>
-
 
         </plugins>
     </build>

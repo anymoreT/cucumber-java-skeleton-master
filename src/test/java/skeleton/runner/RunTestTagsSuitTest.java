@@ -1,10 +1,6 @@
 package skeleton.runner;
 
-import cucumber.api.CucumberOptions;
-//import cucumber.api.testng.AbstractTestNGCucumberTests;
-//import org.testng.annotations.AfterSuite;
-//import org.testng.annotations.BeforeSuite;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.testng.CucumberOptions;
 import org.junit.runner.RunWith;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -12,7 +8,6 @@ import org.testng.annotations.BeforeSuite;
 /*
 通过tag指定跑的脚本
  */
-@RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"json:target/cucumber/cucumber.json", "html:target/cucumber", "pretty"},
         features = "src/test/resources/skeleton/features/webFeature",

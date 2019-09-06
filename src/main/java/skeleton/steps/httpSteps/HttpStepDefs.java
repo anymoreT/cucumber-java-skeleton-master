@@ -1,6 +1,7 @@
 package skeleton.steps.httpSteps;
 
-import cucumber.api.java.en.Then;
+
+import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import skeleton.com.seleniumFunction.BrowserDriver;
