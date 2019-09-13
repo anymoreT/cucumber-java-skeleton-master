@@ -1,6 +1,7 @@
 package skeleton.steps.webUiSteps;
 import gherkin.ast.Scenario;
-import io.cucumber.java.en.Then;
+//import io.cucumber.java.en.Then;
+import cucumber.api.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.beans.factory.annotation.Autowired;

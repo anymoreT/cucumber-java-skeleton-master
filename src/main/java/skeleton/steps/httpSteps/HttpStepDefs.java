@@ -1,7 +1,8 @@
 package skeleton.steps.httpSteps;
 
 
-import io.cucumber.java.en.Then;
+//import io.cucumber.java.en.Then;
+import cucumber.api.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import skeleton.com.seleniumFunction.BrowserDriver;
@@ -20,5 +21,7 @@ public class HttpStepDefs {
     public void send_http() {
         System.out.print("在 HttpStepDefs class,version:" + dataRepo.getVersion());
     }
+
+
 }
 

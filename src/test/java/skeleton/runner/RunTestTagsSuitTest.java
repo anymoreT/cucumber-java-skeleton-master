@@ -1,6 +1,7 @@
 package skeleton.runner;
 
-import io.cucumber.testng.CucumberOptions;
+//import io.cucumber.testng.CucumberOptions;
+import cucumber.api.CucumberOptions;
 import org.junit.runner.RunWith;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -11,7 +12,7 @@ import org.testng.annotations.BeforeSuite;
 @CucumberOptions(
         plugin = {"json:target/cucumber/cucumber.json", "html:target/cucumber", "pretty"},
         features = "src/test/resources/skeleton/features/webFeature",
-        glue="skeleton.steps",
+        glue="skeleton",
         tags = { "@TestngScenario" }
           )
 public class RunTestTagsSuitTest {
